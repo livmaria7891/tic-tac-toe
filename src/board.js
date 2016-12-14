@@ -37,13 +37,19 @@ var Board = function(){
 
     //return array of and prints all spaces on board equal to null
     this.readBoard = function(){
-      emptySpots = [];
+      var emptySpots = [];
+      var board = this.gameBoard
+      for(var spot in board){
+        if(board[spot] == null && typeof board[spot] != 'function'){
+          emptySpots.push(spot);
+        }
+      }
       return emptySpots;
     }
 
     //user is prompted to pick available coordinate
     this.pickSpot = function(){
-
+      
     }
 
     //prints current board to terminal(and returns board)

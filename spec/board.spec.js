@@ -28,13 +28,12 @@ describe('Board', function() {
   });
 
   describe('readBoard', function() {
-    xit('returns all values that equal null', function() {
+    it('returns all values that equal null', function() {
       var testBoard = new Board();
       testBoard.writeToBoard('9','o');
       testBoard.writeToBoard('1','x');
 
       expect(testBoard.readBoard()).toEqual(["2","3","4","5","6","7","8"]);
     });
-
   });
 });
