@@ -35,5 +35,11 @@ describe('Board', function() {
 
       expect(testBoard.readBoard()).toEqual(["2","3","4","5","6","7","8"]);
     });
+
+    it('does not add clearBoard to array', function() {
+      var testBoard = new Board();
+
+      expect(testBoard.readBoard()).not.toEqual(["1","2","3","4","5","6","7","8","9", "clearBoard"]);
+    });
   });
 });

@@ -48,14 +48,40 @@ var Board = function(){
     }
 
     //user is prompted to pick available coordinate
+    //should this go in Game?
+    //will do later, may not need it for wave 2
     this.pickSpot = function(){
-      
-    }
+
+    };
 
     //prints current board to terminal(and returns board)
-    this.printBoard = function(){
-
-    }
+    // this.printBoard = function(){
+    //   var board = this.gameBoard;
+    //   var printedBoard =
+    //     board['1'] + board['2'] + board['3'] + "\n" +
+    //     board['4'] + board['5'] + board['6'] + "\n" +
+    //     board['7'] + board['8'] + board['9'] + "\n";
+    //   var boardAsString = "";
+    //   var rowCounter = 0;
+    //   for(var spot in board){
+    //     if(rowCounter)
+    //       switch(board[spot]){
+    //         case null:
+    //           boardAsString.concat("_")
+    //         break;
+    //         case 'x':
+    //           boardAsString.concat("X")
+    //         break;
+    //         case 'o':
+    //           boardAsString.concat("O")
+    //         break;
+    //       }
+    //     }
+    //     rowCounter = 0
+    //   }
+    //
+    //
+    // }
 
 };
 // var Board = require('board').default;
