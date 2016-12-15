@@ -1,3 +1,6 @@
+import Game from 'game.js';
+import Player from 'player.js';
+
 var Board = function(){
 
     this.gameBoard = {
@@ -54,34 +57,74 @@ var Board = function(){
 
     };
 
-    //prints current board to terminal(and returns board)
-    // this.printBoard = function(){
-    //   var board = this.gameBoard;
-    //   var printedBoard =
-    //     board['1'] + board['2'] + board['3'] + "\n" +
-    //     board['4'] + board['5'] + board['6'] + "\n" +
-    //     board['7'] + board['8'] + board['9'] + "\n";
-    //   var boardAsString = "";
-    //   var rowCounter = 0;
-    //   for(var spot in board){
-    //     if(rowCounter)
-    //       switch(board[spot]){
-    //         case null:
-    //           boardAsString.concat("_")
-    //         break;
-    //         case 'x':
-    //           boardAsString.concat("X")
-    //         break;
-    //         case 'o':
-    //           boardAsString.concat("O")
-    //         break;
-    //       }
-    //     }
-    //     rowCounter = 0
-    //   }
-    //
-    //
-    // }
+
+    this.checkForWinner = function(userInput, char){
+      var board = this.gameBoard
+      switch(userInput){
+        case '1':
+          if ((board['2'] == char  && board['3'] == char)||
+              (board['4'] == char  && board['7'] == char)||
+              (board['5'] == char  && board['9'] == char)){
+            return true;
+          };
+        break;
+        case '2':
+        if ((board['1'] == char  && board['3'] == char)||
+            (board['5'] == char  && board['8'] == char)){
+          return true;
+        };
+        break;
+        case '3':
+        if ((board['1'] == char  && board['2'] == char)||
+            (board['6'] == char  && board['9'] == char)||
+            (board['5'] == char  && board['7'] == char)){
+          return true;
+        };
+        break;
+        case '4':
+        if ((board['5'] == char  && board['6'] == char)||
+            (board['1'] == char  && board['7'] == char)){
+          return true;
+        };
+        break;
+        case '5':
+        if ((board['4'] == char  && board['6'] == char)||
+            (board['2'] == char  && board['8'] == char)||
+            (board['1'] == char  && board['9'] == char)||
+            (board['3'] == char  && board['7'] == char)){
+          return true;
+        };
+        break;
+        case '6':
+        if ((board['4'] == char  && board['5'] == char)||
+            (board['2'] == char  && board['8'] == char)||
+            (board['3'] == char  && board['9'] == char)){
+          return true;
+        };
+        break;
+        case '7':
+        if ((board['8'] == char  && board['9'] == char)||
+            (board['1'] == char  && board['4'] == char)||
+            (board['3'] == char  && board['5'] == char)){
+          return true;
+        };
+        break;
+        case '8':
+        if ((board['2'] == char  && board['5'] == char)||
+            (board['7'] == char  && board['9'] == char)){
+          return true;
+        };
+        break;
+        case '9':
+        if ((board['7'] == char  && board['8'] == char)||
+            (board['3'] == char  && board['6'] == char)||
+            (board['1'] == char  && board['5'] == char)){
+          return true;
+        };
+        break;
+      }
+
+    }
 
 };
 // var Board = require('board').default;
