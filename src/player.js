@@ -1,6 +1,8 @@
 import Board from 'board.js';
+import Game from 'game.js';
 
 function Player(){
+  console.log('player created')
   this.name = "Player"
   this.char = null
 }
