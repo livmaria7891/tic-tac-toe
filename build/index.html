@@ -1,10 +1,115 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Tic-Tac-Toe</title>
-    <meta charset="utf-8">
-  </head>
-  <body>
-    <script src="/app.bundle.js" charset="utf-8"></script>
-  </body>
+<head>
+
+  <!-- Basic Page Needs
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta charset="utf-8">
+  <title>Tic-Tac-Toe</title>
+  <meta name="description" content="">
+  <meta name="author" content="">
+
+  <!-- Mobile Specific Metas
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <!-- FONT
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link href="//fonts.googleapis.com/css?family=Raleway:400,300,600" rel="stylesheet" type="text/css">
+
+  <!-- CSS
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/skeleton.css">
+  <link rel="stylesheet" href="css/app.css">
+  <!-- Favicon
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+
+  <!-- Primary Page Layout
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+  <div class="container">
+    <div class="row">
+      <div class="offset-by-three six columns" style="margin-top: 5%">
+        <h4 class='heading'>Tic Tac Toe</h4>
+        <a class="button heading" href="#openModal">Play</a>
+        <!-- modal -->
+        <div id="openModal" class="modalDialog">
+          <div>
+            <a href="close" title="Close" class="close">X</a>
+
+              <section id="modal_show_1">
+                <h2>Ready to Play?</h2>
+                <label for="name1">First Player's Name</label>
+                <input class="u-full-width" type="name" placeholder="Phoebe" id="name1">
+
+                <input id="modal_1_button" type="submit" value="Next">
+              </section>
+              <section id="modal_show_2">
+                <h2>Ready to Play?</h2>
+                <label for="name2">Second Player's Name</label>
+                <input class="u-full-width" type="name" placeholder="Alfonso" id="name2">
+
+                <input id="modal_2_button" type="submit" value="Next">
+              </section>
+
+              <section id="modal_show_3">
+                <h1>Good Luck!</h1>
+                <a class="button" href="#close">Begin</a>
+              </section>
+          </div>
+        </div>
+      </div>
+        <!-- board -->
+        <main class="offset-by-three six columns">
+          <div class="board">
+            <div class="row">
+              <div class="one-third column box o-box">
+
+              </div>
+              <div class="one-third column box">
+
+              </div>
+              <div class="one-third column box x-box">
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="one-third column box x-box">
+
+              </div>
+              <div class="one-third column box o-box">
+
+              </div>
+              <div class="one-third column box">
+
+              </div>
+            </div>
+
+            <div class="row">
+              <div class="one-third column box">
+
+              </div>
+              <div class="one-third column box">
+
+              </div>
+              <div class="one-third column box o-box">
+
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+  </div> <!--close container -->
+
+<!-- End Document
+  –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+<script src="/app.bundle.js" charset="utf-8"></script>
+
+</body>
 </html>
