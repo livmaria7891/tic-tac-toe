@@ -4,25 +4,25 @@ import Player from 'player.js';
 var Board = function(){
 
     this.gameBoard = {
-      "1": null,
-      "2": null,
-      "3": null,
-      "4": null,
-      "5": null,
-      "6": null,
-      "7": null,
-      "8": null,
-      "9": null,
+      one: null,
+      two: null,
+      three: null,
+      four: null,
+      five: null,
+      six: null,
+      seven: null,
+      eight: null,
+      nine: null,
       clearBoard: function(){
-        this["1"] = null;
-        this["2"]= null;
-        this["3"]= null;
-        this["4"]= null;
-        this["5"]= null;
-        this["6"]= null;
-        this["7"]= null;
-        this["8"]= null;
-        this["9"]= null;
+        this[one] = null;
+        this[two]= null;
+        this[three]= null;
+        this[four]= null;
+        this[five]= null;
+        this[six]= null;
+        this[seven]= null;
+        this[eight]= null;
+        this[nine]= null;
       }
     };
 
@@ -52,7 +52,7 @@ var Board = function(){
 
     //user is prompted to pick available coordinate
     //should this go in Game?
-    //will do later, may not need it for wave 2
+    //will do later, may not need it for wave two
     this.pickSpot = function(){
 
     };
@@ -61,64 +61,64 @@ var Board = function(){
     this.checkForWinner = function(userInput, char){
       var board = this.gameBoard
       switch(userInput){
-        case '1':
-          if ((board['2'] == char  && board['3'] == char)||
-              (board['4'] == char  && board['7'] == char)||
-              (board['5'] == char  && board['9'] == char)){
+        case one:
+          if ((board[two] == char  && board[three] == char)||
+              (board[four] == char  && board[seven] == char)||
+              (board[five] == char  && board[nine] == char)){
             return true;
           };
         break;
-        case '2':
-        if ((board['1'] == char  && board['3'] == char)||
-            (board['5'] == char  && board['8'] == char)){
+        case two:
+        if ((board[one] == char  && board[three] == char)||
+            (board[five] == char  && board[eight] == char)){
           return true;
         };
         break;
-        case '3':
-        if ((board['1'] == char  && board['2'] == char)||
-            (board['6'] == char  && board['9'] == char)||
-            (board['5'] == char  && board['7'] == char)){
+        case three:
+        if ((board[one] == char  && board[two] == char)||
+            (board[six] == char  && board[nine] == char)||
+            (board[five] == char  && board[seven] == char)){
           return true;
         };
         break;
-        case '4':
-        if ((board['5'] == char  && board['6'] == char)||
-            (board['1'] == char  && board['7'] == char)){
+        case four:
+        if ((board[five] == char  && board[six] == char)||
+            (board[one] == char  && board[seven] == char)){
           return true;
         };
         break;
-        case '5':
-        if ((board['4'] == char  && board['6'] == char)||
-            (board['2'] == char  && board['8'] == char)||
-            (board['1'] == char  && board['9'] == char)||
-            (board['3'] == char  && board['7'] == char)){
+        case five:
+        if ((board[four] == char  && board[six] == char)||
+            (board[two] == char  && board[eight] == char)||
+            (board[one] == char  && board[nine] == char)||
+            (board[three] == char  && board[seven] == char)){
           return true;
         };
         break;
-        case '6':
-        if ((board['4'] == char  && board['5'] == char)||
-            (board['2'] == char  && board['8'] == char)||
-            (board['3'] == char  && board['9'] == char)){
+        case six:
+        if ((board[four] == char  && board[five] == char)||
+            (board[two] == char  && board[eight] == char)||
+            (board[three] == char  && board[nine] == char)){
           return true;
         };
         break;
-        case '7':
-        if ((board['8'] == char  && board['9'] == char)||
-            (board['1'] == char  && board['4'] == char)||
-            (board['3'] == char  && board['5'] == char)){
+        case seven:
+        if ((board[eight] == char  && board[nine] == char)||
+            (board[one] == char  && board[four] == char)||
+            (board[three] == char  && board[five] == char)){
           return true;
         };
         break;
-        case '8':
-        if ((board['2'] == char  && board['5'] == char)||
-            (board['7'] == char  && board['9'] == char)){
+        case eight:
+        if ((board[two] == char  && board[five] == char)||
+            (board[seven] == char  && board[nine] == char)){
           return true;
         };
         break;
-        case '9':
-        if ((board['7'] == char  && board['8'] == char)||
-            (board['3'] == char  && board['6'] == char)||
-            (board['1'] == char  && board['5'] == char)){
+        case nine:
+        if ((board[seven] == char  && board[eight] == char)||
+            (board[three] == char  && board[six] == char)||
+            (board[one] == char  && board[five] == char)){
           return true;
         };
         break;

@@ -2,7 +2,7 @@
   margin-left: 3.3%;
 }
 .board{
-  height: 60vh;
+  height: 30vw;
 }
 
 .board .row{
@@ -21,12 +21,12 @@
   opacity: .5;
 }
 
-.o-box{
+.o{
   background-image: url("../imgs/o.png");
   background-size: contain;
 }
 
-.x-box{
+.x{
   background-image: url("../imgs/x.png");
   background-size: contain;
 }

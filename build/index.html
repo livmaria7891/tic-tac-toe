@@ -66,48 +66,58 @@
         <!-- board -->
         <main class="offset-by-three six columns">
           <div class="board">
-            <div class="row">
-              <div class="one-third column box o-box">
 
-              </div>
-              <div class="one-third column box">
-
-              </div>
-              <div class="one-third column box x-box">
-
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="one-third column box x-box">
-
-              </div>
-              <div class="one-third column box o-box">
-
-              </div>
-              <div class="one-third column box">
-
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="one-third column box">
-
-              </div>
-              <div class="one-third column box">
-
-              </div>
-              <div class="one-third column box o-box">
-
-              </div>
-            </div>
           </div>
         </main>
       </div>
+
   </div> <!--close container -->
 
-<!-- End Document
+  <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+<!--Begin Template -->
+
+<script type="text/template" id="tmpl-board">
+<div class="row">
+  <div class="one-third column box <%= one %>" id = "one">
+    <!--  -->
+
+  </div>
+  <div class="one-third column box <%= two %>" id = "two">
+
+  </div>
+  <div class="one-third column box <%= three %>" id = "three">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="one-third column box <%= four %>" id = "four">
+
+  </div>
+  <div class="one-third column box <%= five %>" id = "five">
+
+  </div>
+  <div class="one-third column box <%= six %>" id = "six">
+
+  </div>
+</div>
+
+<div class="row">
+  <div class="one-third column box <%= seven %>" id = "seven">
+
+  </div>
+  <div class="one-third column box <%= eight %>" id = "eight">
+    
+  </div>
+  <div class="one-third column box <%= nine %>" id = "nine">
+
+  </div>
+</div>
+
+
+</script>
+
 
 <script src="/app.bundle.js" charset="utf-8"></script>
 
