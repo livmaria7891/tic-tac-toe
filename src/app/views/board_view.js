@@ -2,7 +2,7 @@ import Backbone from 'backbone';
 import $ from 'jquery';
 import _ from 'underscore';
 
-import Board from 'board.js'
+import Board from '../models/board.js'
 
 const BoardView = Backbone.View.extend({
   initialize: function(options){

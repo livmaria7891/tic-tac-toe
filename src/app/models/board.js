@@ -1,8 +1,11 @@
-import Game from 'game.js';
-import Player from 'player.js';
+import Backbone from 'backbone';
 
-var Board = function(){
+import Game from './game.js';
+import Player from './player.js';
 
+const Board = Backbone.Model.extend ({
+
+  initialize: function(){
     this.gameBoard = {
       one: null,
       two: null,
@@ -24,9 +27,11 @@ var Board = function(){
         this[eight]= null;
         this[nine]= null;
       }
-    };
+    }
+  },
 
-    this.writeToBoard = function(num,char){
+
+    writeToBoard:function(num,char){
       //num is key on board, char is x or o
       var board = this.gameBoard;
       if(board[num] != null){
@@ -36,10 +41,10 @@ var Board = function(){
           throw "Error, invalid input"
       }
       board[num] = char;
-    };
+    },
 
     //return array of and prints all spaces on board equal to null
-    this.readBoard = function(){
+    readBoard:function(){
       var emptySpots = [];
       var board = this.gameBoard
       for(var spot in board){
@@ -48,17 +53,10 @@ var Board = function(){
         }
       }
       return emptySpots;
-    }
-
-    //user is prompted to pick available coordinate
-    //should this go in Game?
-    //will do later, may not need it for wave two
-    this.pickSpot = function(){
-
-    };
+    },
 
 
-    this.checkForWinner = function(userInput, char){
+    checkForWinner:function(userInput, char){
       var board = this.gameBoard
       switch(userInput){
         case one:
@@ -126,7 +124,7 @@ var Board = function(){
 
     }
 
-};
+});
 // var Board = require('board').default;
 // var board = new Board();
 export default Board;

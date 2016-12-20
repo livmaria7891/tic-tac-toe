@@ -1,11 +1,12 @@
 import Backbone from 'backbone';
 
-import Board from 'board.js';
-import Player from 'player.js';
+import Board from './board.js';
+import Player from './player.js';
 
 const Game = Backbone.Model.extend ({
 
   initialize: function(options){
+    console.log('game initialized')
     this.active = false;
     this.numberOfPlays = 0;
     this.board = new Board();
@@ -14,7 +15,7 @@ const Game = Backbone.Model.extend ({
     this.player2 = new Player();
 
   },
-  
+
   chooseFirstPlayer: function(){
     var player1 = this.player1
     var player2 = this.player2
@@ -31,7 +32,7 @@ const Game = Backbone.Model.extend ({
     }
   }
 
-};
+});
 
 
 export default Game;

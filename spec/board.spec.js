@@ -1,4 +1,7 @@
-import Board from "board";
+import Board from "../src/app/models/board.js";
+import Game from "../src/app/models/game.js";
+import Player from "../src/app/models/player.js";
+
 
 describe('Board', function() {
   describe('writeToBoard', function() {
