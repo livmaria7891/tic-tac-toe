@@ -3,11 +3,12 @@ import $ from 'jquery';
 import _ from 'underscore';
 
 import Board from '../models/board.js'
+import Game from '../models/game.js'
 
 const BoardView = Backbone.View.extend({
   initialize: function(options){
     console.log("BoardView generated");
-
+    
     this.template = _.template($("#tmpl-board").html());
 
     //Later take this from Game's gameboard

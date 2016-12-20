@@ -35,35 +35,26 @@
     <div class="row">
       <div class="offset-by-three six columns" style="margin-top: 5%">
         <h4 class='heading'>Tic Tac Toe</h4>
-        <a class="button heading" href="#openModal">Play</a>
+        <a class="button heading play" href="#openModal">Play</a>
         <!-- modal -->
         <div id="openModal" class="modalDialog">
           <div>
             <a href="close" title="Close" class="close">X</a>
 
-              <section id="modal_show_1">
+              <section id='get_player_name'>
                 <h2>Ready to Play?</h2>
                 <form class="player-name-form">
                   <label>First Player's Name</label>
-                  <input class="u-full-width name_input" type="text" placeholder="Phoebe" name="name" id="name">
+                  <input class="u-full-width name_input" type="text" placeholder="Player Name" name="name" id="name">
 
                   <input class="player1-button" type="submit" value="Next">
                 </form>
               </section>
 
-              <section id="modal_show_2">
-                <h2>Ready to Play?</h2>
-                <form class="player2-form">
-                  <label>Second Player's Name</label>
-                  <input class="u-full-width" type="name" placeholder="Alfonso" name="name">
-
-                  <input type="submit" value="Next">
-                </form>
-              </section>
-
-              <section id="modal_show_3">
-                <h1>Good Luck!</h1>
-                <a class="button game_initializer" href="#close">Begin</a>
+              <section id="begin_modal">
+                <h2> will go first!</h2>
+                <h3>Good Luck!</h3>
+                <a class="button" href="#close">Begin</a>
               </section>
           </div>
         </div>

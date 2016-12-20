@@ -17,19 +17,22 @@ const Game = Backbone.Model.extend ({
   },
 
   chooseFirstPlayer: function(){
-    var player1 = this.player1
-    var player2 = this.player2
+    let player1 = this.player1
+    let player2 = this.player2
     if(Math.floor(Math.random()*2)){
       player1.setCharacter('x')
       player1.setStatus(true);
       player2.setCharacter('o');
       player2.setStatus(false);
+      return player1
     }else{
       player2.setCharacter('x');
       player2.setStatus(true);
       player1.setCharacter('o');
       player1.setStatus(false);
+      return player2
     }
+
   }
 
 });

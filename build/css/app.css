@@ -31,15 +31,7 @@
   background-size: contain;
 }
 
-#modal_show_1 {
-
-}
-
-#modal_show_2 {
-  display: none;
-}
-
-#modal_show_3 {
+#begin_modal {
   display: none;
 }
 
@@ -95,13 +87,3 @@
 }
 
 .close:hover { background: #CADCFF; }
-
-
-
-/*input[name=name1]{
-  border:5px solid black;
-}
-
-input[name=name2]{
-  border:5px solid purple;
-}*/

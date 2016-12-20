@@ -5,13 +5,15 @@ import Game from './game.js';
 
 const Player = Backbone.Model.extend ({
   initialize: function(options){
+
     this.name = "Player"
     this.char = null
-  }, 
+  },
 
   setName:function(name){
     if(typeof name == 'string'){
       this.name = name;
+      console.log("player name set: " + this.name)
     }else{
       throw "Name must be a string"
     }
