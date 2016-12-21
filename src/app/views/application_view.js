@@ -23,7 +23,6 @@ const ApplicationView = Backbone.View.extend({
   initializeGame:function(){
     this.game = new Game();
     this.board = this.game.board;
-    // this.board = this.game.gameBoard;
   },
 
   getPlayer1Name:function(event){
@@ -52,14 +51,30 @@ const ApplicationView = Backbone.View.extend({
     $("#begin_modal h2").prepend(first_player);
   },
   makePlay:function(event){
-    //handles when player clicks on space
+    //when a player clicks on a space...
     let id = event.target.id
+    //make sure this only does things when the id is correct ^^
     let board = this.board
-    let player_char = 'o'
-    $(event.target).addClass(player_char);
-    board.writeToBoard(id, player_char)
+    let player = this.game.activePlayer
+    let char = player.char
+    if(this.game.active){
+      $(event.target).addClass(char);
+      this.game.newPlay(id, char);
+
+    }
+
+    if(this.board.checkForWinner(id,char)){
+      this.game.active = false;
+      this.announceWinner(player);
+    }
 
   },
+  announceWinner:function(player){
+    console.log(player.name + " is the winner!")
+    
+  },
+
+
   render: function() {
     return this;
   }

@@ -17,15 +17,15 @@ const Board = Backbone.Model.extend ({
       eight: null,
       nine: null,
       clearBoard: function(){
-        this[one] = null;
-        this[two]= null;
-        this[three]= null;
-        this[four]= null;
-        this[five]= null;
-        this[six]= null;
-        this[seven]= null;
-        this[eight]= null;
-        this[nine]= null;
+        this.one = null;
+        this.two= null;
+        this.three= null;
+        this.four= null;
+        this.five= null;
+        this.six= null;
+        this.seven= null;
+        this.eight= null;
+        this.nine= null;
       }
     }
   },
@@ -57,69 +57,84 @@ const Board = Backbone.Model.extend ({
 
 
     checkForWinner:function(userInput, char){
-      var board = this.gameBoard
+      console.log(userInput);
+      console.log(char);
+
+      let board = this.gameBoard
       switch(userInput){
-        case one:
-          if ((board[two] == char  && board[three] == char)||
-              (board[four] == char  && board[seven] == char)||
-              (board[five] == char  && board[nine] == char)){
+        case 'one':
+
+          if ((board.two == char  && board.three == char)||
+              (board.four == char  && board.seven == char)||
+              (board.five == char  && board.nine == char)){
+
             return true;
           };
         break;
-        case two:
-        if ((board[one] == char  && board[three] == char)||
-            (board[five] == char  && board[eight] == char)){
-          return true;
-        };
+        case 'two':
+
+          if ((board.one == char  && board.three == char)||
+              (board.five == char  && board.eight == char)){
+            return true;
+          };
         break;
-        case three:
-        if ((board[one] == char  && board[two] == char)||
-            (board[six] == char  && board[nine] == char)||
-            (board[five] == char  && board[seven] == char)){
-          return true;
-        };
+        case 'three':
+
+          if ((board.one == char  && board.two == char)||
+              (board.six == char  && board.nine == char)||
+              (board.five == char  && board.seven == char)){
+            return true;
+          };
         break;
-        case four:
-        if ((board[five] == char  && board[six] == char)||
-            (board[one] == char  && board[seven] == char)){
-          return true;
-        };
+        case 'four':
+
+          if ((board.five == char  && board.six == char)||
+              (board.one == char  && board.seven == char)){
+            return true;
+          };
         break;
-        case five:
-        if ((board[four] == char  && board[six] == char)||
-            (board[two] == char  && board[eight] == char)||
-            (board[one] == char  && board[nine] == char)||
-            (board[three] == char  && board[seven] == char)){
-          return true;
-        };
+        case 'five':
+
+          if ((board.four == char  && board.six == char)||
+              (board.two == char  && board.eight == char)||
+              (board.one == char  && board.nine == char)||
+              (board.three == char  && board.seven == char)){
+            return true;
+          };
         break;
-        case six:
-        if ((board[four] == char  && board[five] == char)||
-            (board[two] == char  && board[eight] == char)||
-            (board[three] == char  && board[nine] == char)){
-          return true;
-        };
+        case 'six':
+
+          if ((board.four == char  && board.five == char)||
+              (board.two == char  && board.eight == char)||
+              (board.three == char  && board.nine == char)){
+            return true;
+          };
         break;
-        case seven:
-        if ((board[eight] == char  && board[nine] == char)||
-            (board[one] == char  && board[four] == char)||
-            (board[three] == char  && board[five] == char)){
-          return true;
-        };
+        case 'seven':
+
+          if ((board.eight == char  && board.nine == char)||
+              (board.one == char  && board.four == char)||
+              (board.three == char  && board.five == char)){
+            return true;
+          };
+          break;
+        case 'eight':
+
+          if ((board.two == char  && board.five == char)||
+              (board.seven == char  && board.nine == char)){
+            return true;
+          };
         break;
-        case eight:
-        if ((board[two] == char  && board[five] == char)||
-            (board[seven] == char  && board[nine] == char)){
-          return true;
-        };
+        case 'nine':
+
+          if ((board.seven == char  && board.eight == char)||
+              (board.three == char  && board.six == char)||
+              (board.one == char  && board.five == char)){
+            return true;
+          };
         break;
-        case nine:
-        if ((board[seven] == char  && board[eight] == char)||
-            (board[three] == char  && board[six] == char)||
-            (board[one] == char  && board[five] == char)){
-          return true;
-        };
-        break;
+        default:
+          return false;
       }
 
     }
