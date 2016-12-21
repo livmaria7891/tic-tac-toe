@@ -6,23 +6,30 @@ import Board from '../models/board.js'
 import Game from '../models/game.js'
 
 const BoardView = Backbone.View.extend({
+  el: '.board',
   initialize: function(options){
-    console.log("BoardView generated");
-    
-    this.template = _.template($("#tmpl-board").html());
-
-    //Later take this from Game's gameboard
-    //consider, passing game board as an argument whenever this needs re-rendered
-    var b = new Board()
-    this.board = b.gameBoard;
-
-    this.element = $(".board")
+    console.log("BoardView generated")
+    // this.element = options.el;
+    this.board = options.model;
   },
+  events: {
+    'click this': 'get_id'
+  },
+  get_id:function(){
+    console.log("Clicking works")
+  },
+  updateSpaces:function(){
+    console.log("got to update spaces")
+    let board = this.board;
 
+    for(var key in board){
+      $("#" + key.toString()).addClass(board[key]);
+    }
+
+  },
   render: function(){
-    var html = this.template(this.board);
-
-    this.element.html(html);
+    this.updateSpaces();
+    return this;
   }
 });
 
