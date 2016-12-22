@@ -1,4 +1,4 @@
-import Player from "player";
+import Player from "../src/app/models/player.js";
 
 describe('Player', function(){
   describe('setName',function(){
