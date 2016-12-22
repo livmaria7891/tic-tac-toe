@@ -53,25 +53,31 @@ const ApplicationView = Backbone.View.extend({
   makePlay:function(event){
     //when a player clicks on a space...
     let id = event.target.id
-    //make sure this only does things when the id is correct ^^
-    let board = this.board
-    let player = this.game.activePlayer
+    let game = this.game
+    let player = game.activePlayer
     let char = player.char
-    if(this.game.active){
+    if($(event.target).hasClass('box') && game.active){
+
       $(event.target).addClass(char);
-      this.game.newPlay(id, char);
-
+        game.newPlay(id, char);
     }
-
     if(this.board.checkForWinner(id,char)){
-      this.game.active = false;
-      this.announceWinner(player);
+      game.active = false;
+      this.announceGameResults('win', player);
+    }
+    if(game.numberOfPlays >= 9){
+      this.announceGameResults('tie', player)
     }
 
   },
-  announceWinner:function(player){
-    console.log(player.name + " is the winner!")
-    
+  announceGameResults:function(result, player){
+    if(result == 'win'){
+      $('#game-results').text(player.name + " is the winner!")
+
+    }else{
+      $('#game-results').text("It's a tie!")
+    }
+
   },
 
 

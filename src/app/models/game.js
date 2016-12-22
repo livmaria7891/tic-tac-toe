@@ -31,18 +31,10 @@ const Game = Backbone.Model.extend ({
       return player2
     }
   },
-  // getActivePlayer: function(){
-  //   if(this.player1.active){
-  //     return this.player1
-  //   }else{
-  //     return this.player2
-  //   }
-  // },
 
   newPlay: function(space_id,char){
-  
+
     this.board.writeToBoard(space_id,char)
-    console.log(this.gameBoard);
     this.numberOfPlays += 1;
     if(this.numberOfPlays >= 9 && !this.board.checkForWinner(char,space_id)){
       console.log('tie')
