@@ -11,6 +11,8 @@ const ApplicationView = Backbone.View.extend({
   initialize: function() {
     //store original modal for beginning a game
     this.originalModal = $('.player_form').html();
+
+    this.originalBoard = $('.play-area').html();
     this.render();
   },
 
@@ -24,6 +26,10 @@ const ApplicationView = Backbone.View.extend({
   initializeGame:function(){
     $('.play-modal').html(this.originalModal)
     $('#begin_modal').hide();
+
+    $(".board").html(this.originalBoard)
+    $('#game-results').empty()
+
     this.game = new Game();
     this.board = this.game.board;
   },
