@@ -34,30 +34,26 @@
   <div class="container">
     <div class="row">
       <div class="offset-by-three six columns" style="margin-top: 5%">
-        <h4 class='heading'>Tic Tac Toe</h4>
-        <a class="button heading" href="#openModal">Play</a>
+        <h4 class='game-text'>Tic Tac Toe</h4>
+        <a class="button game-text play" href="#openModal">New Game</a>
         <!-- modal -->
         <div id="openModal" class="modalDialog">
           <div>
             <a href="close" title="Close" class="close">X</a>
+              <div class = 'play-modal'>
+                <section class='player_form'>
+                  <form class="player-name-form">
+                    <h2>Ready to Play?</h2>
+                    <label>First Player's Name</label>
+                    <input class="u-full-width name_input" type="text" placeholder="Player Name" name="name" id="name">
+                    <input class="player1-button" type="submit" value="Next">
+                  </form>
+                </section>
+              </div>
 
-              <section id="modal_show_1">
-                <h2>Ready to Play?</h2>
-                <label for="name1">First Player's Name</label>
-                <input class="u-full-width" type="name" placeholder="Phoebe" id="name1">
-
-                <input id="modal_1_button" type="submit" value="Next">
-              </section>
-              <section id="modal_show_2">
-                <h2>Ready to Play?</h2>
-                <label for="name2">Second Player's Name</label>
-                <input class="u-full-width" type="name" placeholder="Alfonso" id="name2">
-
-                <input id="modal_2_button" type="submit" value="Next">
-              </section>
-
-              <section id="modal_show_3">
-                <h1>Good Luck!</h1>
+              <section id="begin_modal">
+                <h2> will go first!</h2>
+                <h3>Good Luck!</h3>
                 <a class="button" href="#close">Begin</a>
               </section>
           </div>
@@ -67,47 +63,57 @@
         <main class="offset-by-three six columns">
           <div class="board">
             <div class="row">
-              <div class="one-third column box o-box">
+              <div class="one-third column box" id = "one">
 
               </div>
-              <div class="one-third column box">
+              <div class="one-third column box" id = "two">
 
               </div>
-              <div class="one-third column box x-box">
-
-              </div>
-            </div>
-
-            <div class="row">
-              <div class="one-third column box x-box">
-
-              </div>
-              <div class="one-third column box o-box">
-
-              </div>
-              <div class="one-third column box">
+              <div class="one-third column box" id = "three">
 
               </div>
             </div>
 
             <div class="row">
-              <div class="one-third column box">
+              <div class="one-third column box" id = "four">
 
               </div>
-              <div class="one-third column box">
+              <div class="one-third column box" id = "five">
 
               </div>
-              <div class="one-third column box o-box">
+              <div class="one-third column box" id = "six">
 
               </div>
             </div>
+
+            <div class="row">
+              <div class="one-third column box" id = "seven">
+
+              </div>
+              <div class="one-third column box" id = "eight">
+
+              </div>
+              <div class="one-third column box" id = "nine">
+
+              </div>
+            </div>
+
           </div>
+        <section>
+          <h2 class='game-text' id="game-results"></h2>
+        </section>
         </main>
+
       </div>
+      <!-- Announce Game Results -->
+
+
   </div> <!--close container -->
 
-<!-- End Document
+  <!-- End Document
   –––––––––––––––––––––––––––––––––––––––––––––––––– -->
+
+
 
 <script src="/app.bundle.js" charset="utf-8"></script>
 
