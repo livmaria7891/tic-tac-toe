@@ -58,7 +58,7 @@ const ApplicationView = Backbone.View.extend({
     // $("#get_player_name").hide(500);
     $(".player-name-form").hide(500);
     $("#begin_modal").show(500);
-    $("#begin_modal h2").prepend(first_player);
+    $("#begin_modal h2").text(first_player + " will go first!");
   },
   makePlay:function(event){
     //when a player clicks on a space...
