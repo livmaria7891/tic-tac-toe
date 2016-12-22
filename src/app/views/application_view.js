@@ -9,7 +9,8 @@ import BoardView from 'app/views/board_view.js';
 const ApplicationView = Backbone.View.extend({
   el: '.container',
   initialize: function() {
-
+    //store original modal for beginning a game
+    this.originalModal = $('.player_form').html();
     this.render();
   },
 
@@ -21,6 +22,8 @@ const ApplicationView = Backbone.View.extend({
   },
 
   initializeGame:function(){
+    $('.play-modal').html(this.originalModal)
+    $('#begin_modal').hide();
     this.game = new Game();
     this.board = this.game.board;
   },
@@ -46,7 +49,8 @@ const ApplicationView = Backbone.View.extend({
     this.game.active = true;
     let first_player = this.game.chooseFirstPlayer().name;
 
-    $("#get_player_name").hide(500);
+    // $("#get_player_name").hide(500);
+    $(".player-name-form").hide(500);
     $("#begin_modal").show(500);
     $("#begin_modal h2").prepend(first_player);
   },
